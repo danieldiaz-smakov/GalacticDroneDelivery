@@ -43,12 +43,18 @@ public class DeliveryTask {
         if (assignedDrone == null)
             throw new IllegalStateException("assigned drone cannot be null");
 
-        var speed = assignedDrone.speedKmPerMin()
+        var speed = assignedDrone.speedKmPerMin();
         if (speed <= 0)
             throw new IllegalStateException("assigned drone speed cannot be less than 0");
 
         return origin.distanceTo(destination) / speed;
     }
 
-    
+    public void setState(TaskState state) {
+        this.state = state;
+    }
+
+    public void setAssignedDrone(Drone drone) {
+        this.assignedDrone = drone;
+    }
 }
