@@ -13,11 +13,12 @@ public class Demo {
         var mars = new Planet("Mars", 30, 40, "Carbon dioxide");
 
         var cargo = new Cargo(12.0, "Food");
-
         var task = new DeliveryTask(earth, mars, cargo);
 
-        var light = new LightDrone("Light Drone 1", 5.0);
-        var heavy = new HeavyDrone("Heavy Drone 1", 20.0);
+        var factory = new DroneFactory();
+
+        Drone light = factory.createDrone("LIGHT", "Light Drone 1", 5.0);
+        Drone heavy = factory.createDrone("HEAVY", "Heavy Drone 1", 20.0);
 
         var dispatcher = new Dispatcher();
 
